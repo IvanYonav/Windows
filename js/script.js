@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
         phoneLink = document.querySelectorAll('.phone_link'),
         popup = document.querySelector('.popup');
 
+    let timerPopup = setTimeout(showModal, 60000, popup);
+
     function showModal(popupName) {
         overlay.style.display = 'block';
         popupName.style.display = 'block';
@@ -22,22 +24,34 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = "";
     }
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         showModal(popupEngineer);
     });
 
-    phoneLink.forEach(function(item) {
+    phoneLink.forEach(function (item) {
         item.addEventListener('click', function () {
             showModal(popup);
         });
     });
 
-    popupClose[1].addEventListener('click', function () {
-        hideModal(popupEngineer);
+    window.addEventListener('click', function (event) {
+        if (event.target == popupEngineer) {
+            hideModal(popupEngineer);
+        } else if (event.target == popup) {
+            hideModal(popup);
+            clearTimeout(timerPopup);
+        }
     });
 
-    popupClose[0].addEventListener('click', function () {
-        hideModal(popup);
+    popupClose.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            if (event.currentTarget == popupClose[1]) {
+                hideModal(popupEngineer);
+            } else if (event.currentTarget == popupClose[0]) {
+                hideModal(popup);
+                clearTimeout(timerPopup);
+            }
+        });
     });
 
 });
