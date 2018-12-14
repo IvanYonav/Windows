@@ -479,10 +479,21 @@ textarea:focus {
   padding: 2rem 2rem;
 }
 
-.glazing .aluminum,
+/* .glazing .aluminum,
 .glazing .plastic,
 .glazing .french,
 .glazing .rise {
+  display: none;
+} */
+
+.show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hide {
   display: none;
 }
 
@@ -491,17 +502,22 @@ textarea:focus {
   color: #454545;
 }
 
-/*test*/
-/*.tabs li {
-	display: inline-block;
+.active {
+  text-decoration: none;
+  color: #454545;
 }
-.tabs .glazing_block.active  a {
+
+/*test*/
+/* tabs li {
+  display: inline-block;
+} */
+.glazing_block.active a {
 			text-decoration: none;
 			color: #454545;
 }
 .tabs_divs .noactive {
 	display: none;
-}*/
+}
 /*/test*/
 /*Decoration*/
 .decoration {
@@ -586,11 +602,11 @@ textarea:focus {
   color: #000000;
 }
 
-.decoration .external,
+/* .decoration .external,
 .decoration .rising,
 .decoration .roof {
   display: none;
-}
+} */
 
 /*Our works*/
 .works {
@@ -696,7 +712,7 @@ textarea:focus {
 
 
 /* Timer */
- .timer1 {
+.timer1 {
   padding: 10px;
   border: 1px solid grey;
   background-color: white;
@@ -711,6 +727,7 @@ textarea:focus {
   display: inline-block;
 
 }
+
 .numbers1 {
   display: block;
   float: left;
@@ -719,13 +736,14 @@ textarea:focus {
   margin-right: 10px;
 }
 
-.timer1 span{
+.timer1 span {
   margin-right: 2px;
   background-color: #575757;
   border-radius: 7px;
   padding: 4px;
 }
-.description1{
+
+.description1 {
   font-size: 18px;
   text-align: center;
   color: black;
