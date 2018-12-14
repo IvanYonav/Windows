@@ -309,7 +309,10 @@ textarea:focus {
   font-weight: 400;
   font-style: normal;
   color: #0089cd;
-  text-decoration: underline;
+  text-decoration: none;
+}
+.phone_link a:hover {
+  color: #9a28d8;
 }
 
 /*Main*/
@@ -367,6 +370,7 @@ textarea:focus {
 }
 
 .glazing_block {
+  outline: none;
   display: inline-block;
 }
 
@@ -379,14 +383,15 @@ textarea:focus {
 .glazing_block a {
   font-size: 1.8rem;
   font-weight: 600;
-  text-decoration: underline;
-  /*&:focus {
+  text-decoration: none;
+}
+ .glazing_block a:focus {
 				text-decoration: none;
 				color: #454545;
-			}*/
-}
+			}
 
-.glazing_block a:hover {
+
+.glazing_block :hover {
   cursor: pointer;
 }
 
@@ -486,17 +491,6 @@ textarea:focus {
   display: none;
 } */
 
-.show {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.hide {
-  display: none;
-}
-
 .glazing a.active {
   text-decoration: none;
   color: #454545;
@@ -526,6 +520,7 @@ textarea:focus {
 }
 
 .decoration_item {
+  outline: none;
   text-align: center;
 }
 
@@ -545,18 +540,18 @@ textarea:focus {
   border: none;
   text-decoration: none;
   color: #0089cd;
-  /*border-top: 1rem solid @blue;
+ /*  border-top: 1rem solid #0089cd;
 				height: 8rem;
 				padding: 2rem 1rem;
 				background: -webkit-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 				background: -moz-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 				background: -o-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 				background: -ms-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
-				background: linear-gradient(180deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);*/
+				background: linear-gradient(180deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%); */
 }
 
 .decoration_item .no_click {
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   height: 8rem;
   padding: 2rem 0;
   border-top: 1rem solid #f7f7f7;
@@ -605,7 +600,7 @@ textarea:focus {
 /* .decoration .external,
 .decoration .rising,
 .decoration .roof {
-  display: none;
+  display: block;
 } */
 
 /*Our works*/
@@ -1856,4 +1851,15 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+}
+
+.show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
