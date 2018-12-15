@@ -565,6 +565,11 @@ textarea:focus {
   background: linear-gradient(180deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.after_click a {
+  border-bottom: none;
+  color: #0089cd;
+}
+
 .decoration_content {
   margin-top: 8rem;
 }

@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //табы с отделкой
 
     let decorTabLink = document.querySelectorAll('.decoration_links'),
-        decorTab = document.querySelectorAll('.decoration_inItem'),
+        decorTab = document.querySelectorAll('.decoration_link-wrap'),
         decorTabParent = document.querySelector('.decoration_slider'),
         decorTabContent = document.querySelectorAll('.decoration_types');
 
