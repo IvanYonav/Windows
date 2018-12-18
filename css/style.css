@@ -311,6 +311,7 @@ textarea:focus {
   color: #0089cd;
   text-decoration: none;
 }
+
 .phone_link a:hover {
   color: #9a28d8;
 }
@@ -385,10 +386,11 @@ textarea:focus {
   font-weight: 600;
   text-decoration: none;
 }
- .glazing_block a:focus {
-				text-decoration: none;
-				color: #454545;
-			}
+
+.glazing_block a:focus {
+  text-decoration: none;
+  color: #454545;
+}
 
 
 .glazing_block :hover {
@@ -506,12 +508,14 @@ textarea:focus {
   display: inline-block;
 } */
 .glazing_block.active a {
-			text-decoration: none;
-			color: #454545;
+  text-decoration: none;
+  color: #454545;
 }
+
 .tabs_divs .noactive {
-	display: none;
+  display: none;
 }
+
 /*/test*/
 /*Decoration*/
 .decoration {
@@ -540,7 +544,7 @@ textarea:focus {
   border: none;
   text-decoration: none;
   color: #0089cd;
- /*  border-top: 1rem solid #0089cd;
+  /*  border-top: 1rem solid #0089cd;
 				height: 8rem;
 				padding: 2rem 1rem;
 				background: -webkit-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
@@ -615,9 +619,10 @@ textarea:focus {
 
 .works img {
   margin-bottom: 3rem;
+  cursor: zoom-in;
 }
 
-.works img[data-fancybox="gallery"] .lupa {
+.works.min_img {
   /* position: ; */
   top: 0;
   left: 0;
@@ -630,9 +635,13 @@ textarea:focus {
   transition: ease 0.2s;
 }
 
-.works a {
-  opacity: 0.7;
+.big_img-work {
+  display: none;
+  position: fixed;
+  z-index: 7;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 /*Guarantees*/
 .guarantees {
@@ -882,6 +891,8 @@ textarea:focus {
 .overlay {
   display: none;
   position: fixed;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;

@@ -54,40 +54,35 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     //увеличение картинок
 
     let imgBlock = document.querySelector('.works__img-block'),
         img = document.querySelectorAll('.min_img'),
-        bigImg = document.querySelectorAll('.big_img');
+        bigImg = document.querySelectorAll('.big_img-work');
 
     imgBlock.addEventListener('click', (event) => {
         let target = event.target;
         if (target && target.classList.contains('min_img')) {
             for (let i = 0; i < img.length; i++) {
                 if (target == img[i]) {
-                    showImg(i);
+                    bigImg[i].style.display = "block";
+                    overlay.appendChild(bigImg[i]);
+                    overlay.style.display = 'flex';
+                    document.body.style.overflow = "hidden";
                 }
             }
         }
     });
 
-    let showImg = (a) => {
-        for (let i = a; i < bigImg.length; i++) {
-
-
-            overlay.style.display = 'block';
-            let win = document.createElement('div');
-            overlay
-
-
-            // let yii = bigImg[i].getAttribute('href'),
-            //     imgNew = document.createElement('img');
-            // imgNew.setAttribute('src', yii);
-            // overlay.appendChild(imgNew);
-            //
-        }
-    };
+    bigImg.forEach(function (item) {
+        window.addEventListener('click', function (event) {
+            if (event.target && event.target == overlay) {
+                overlay.style.display = 'none';
+                document.body.style.overflow = "";
+                item.style.display = 'none';
+            }
+        });
+    });
 
     //табы с окнами
 
@@ -303,54 +298,52 @@ window.addEventListener('DOMContentLoaded', () => {
     let checkPhone = (text) => /^\d+$/.test(text);
 
 
-    /*     //calk
+    //calk
 
-        let glazzingBtn = document.querySelectorAll('.glazing_price_btn'),
-            popupCloseCalc = document.querySelector('.popup_calc_close'),
-            pupupCalc = document.querySelector('.popup_calc');
+    let glazzingBtn = document.querySelectorAll('.glazing_price_btn'),
+        popupCloseCalc = document.querySelector('.popup_calc_close'),
+        pupupCalc = document.querySelector('.popup_calc');
 
 
-        glazzingBtn.forEach(function (item) {
-            item.addEventListener('click', function () {
-                overlay.style.display = 'block';
-                pupupCalc.style.display = 'block';
-                document.body.style.overflow = "hidden";
-            });
+    glazzingBtn.forEach(function (item) {
+        item.addEventListener('click', function () {
+            overlay.style.display = 'block';
+            pupupCalc.style.display = 'block';
+            document.body.style.overflow = "hidden";
         });
+    });
 
-        popupCloseCalc.addEventListener('click', function () {
-            pupupCalc.style.display = 'none';
-            overlay.style.display = 'none';
-            document.body.style.overflow = "";
-        });
+    popupCloseCalc.addEventListener('click', function () {
+        pupupCalc.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.style.overflow = "";
+    });
 
-        let balconIcons = document.querySelector('.balcon_icons'),
-            icons = balconIcons.getElementsByTagName('img'),
-            bigImg = document.querySelectorAll('.big_img');
-
-
-        let reduceIcon = (a) => {
-            for (let i = a; i < icons.length; i++) {
-               icons[a].classList.remove('do_image_more');
-            icons[a].classList.add('balcon_icons');
-            }
-        };
-        reduceIcon(1);
+    // let balconIcons = document.querySelector('.balcon_icons'),
+    //     icons = balconIcons.getElementsByTagName('img'),
+    //     bigImg = document.querySelectorAll('.big_img');
 
 
+    // let reduceIcon = (a) => {
+    //     for (let i = a; i < icons.length; i++) {
+    //        icons[a].classList.remove('do_image_more');
+    //     icons[a].classList.add('balcon_icons');
+    //     }
+    // };
+    // reduceIcon(1);
 
-        let zoomIcon = (i) => {
-                icons[i].classList.remove('balcon_icons');
-                icons[i].classList.add('do_image_more');
-        };
 
-        balconIcons.addEventListener('click', (event) => {
-            for (let i = 0; i < icons.length; i++) {
-                if (event.target.tagName == 'IMG' && event.target == icons[i]) {
-                    reduceIcon(0);
-                    zoomIcon(i);
-                }
-            }
-        }); */
+
+    // let zoomIcon = (i) => {
+    //         icons[i].classList.remove('balcon_icons');
+    //         icons[i].classList.add('do_image_more');
+    // };
+
+    // balconIcons.addEventListener('click', (event) => {
+    //     for (let i = 0; i < icons.length; i++) {
+    //         if (event.target.tagName == 'IMG' && event.target == icons[i]) {
+    //             reduceIcon(0);
+    //             zoomIcon(i);
+    //         }
 
 });
