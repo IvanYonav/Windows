@@ -55,16 +55,39 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // увеличение картинок
+    //увеличение картинок
 
-    // let imgBlock = document.querySelector('.works__img-block');
+    let imgBlock = document.querySelector('.works__img-block'),
+        img = document.querySelectorAll('.min_img'),
+        bigImg = document.querySelectorAll('.big_img');
 
-    // imgBlock.addEventListener('click', (event) => {
-    //     if (event.target && event.target.matches('img')) {
-    //         console.log('клик');
-    //     }
-    // });
+    imgBlock.addEventListener('click', (event) => {
+        let target = event.target;
+        if (target && target.classList.contains('min_img')) {
+            for (let i = 0; i < img.length; i++) {
+                if (target == img[i]) {
+                    showImg(i);
+                }
+            }
+        }
+    });
 
+    let showImg = (a) => {
+        for (let i = a; i < bigImg.length; i++) {
+
+
+            overlay.style.display = 'block';
+            let win = document.createElement('div');
+            overlay
+
+
+            // let yii = bigImg[i].getAttribute('href'),
+            //     imgNew = document.createElement('img');
+            // imgNew.setAttribute('src', yii);
+            // overlay.appendChild(imgNew);
+            //
+        }
+    };
 
     //табы с окнами
 
@@ -155,7 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let deadline = '2019-07-04';
 
     function getTimeRemaining(endtime) {
-        let dateDiff = (new Date()).getTimezoneOffset() * 60 * 1000;
+        let dateDiff = (new Date()).getTimezoneOffset() / 60;
         let t = Date.parse(endtime) - Date.parse(new Date()) + dateDiff,
             seconds = Math.floor((t / 1000) % 60),
             minutes = Math.floor((t / 1000 / 60) % 60),
@@ -278,5 +301,56 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     let checkPhone = (text) => /^\d+$/.test(text);
+
+
+    /*     //calk
+
+        let glazzingBtn = document.querySelectorAll('.glazing_price_btn'),
+            popupCloseCalc = document.querySelector('.popup_calc_close'),
+            pupupCalc = document.querySelector('.popup_calc');
+
+
+        glazzingBtn.forEach(function (item) {
+            item.addEventListener('click', function () {
+                overlay.style.display = 'block';
+                pupupCalc.style.display = 'block';
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        popupCloseCalc.addEventListener('click', function () {
+            pupupCalc.style.display = 'none';
+            overlay.style.display = 'none';
+            document.body.style.overflow = "";
+        });
+
+        let balconIcons = document.querySelector('.balcon_icons'),
+            icons = balconIcons.getElementsByTagName('img'),
+            bigImg = document.querySelectorAll('.big_img');
+
+
+        let reduceIcon = (a) => {
+            for (let i = a; i < icons.length; i++) {
+               icons[a].classList.remove('do_image_more');
+            icons[a].classList.add('balcon_icons');
+            }
+        };
+        reduceIcon(1);
+
+
+
+        let zoomIcon = (i) => {
+                icons[i].classList.remove('balcon_icons');
+                icons[i].classList.add('do_image_more');
+        };
+
+        balconIcons.addEventListener('click', (event) => {
+            for (let i = 0; i < icons.length; i++) {
+                if (event.target.tagName == 'IMG' && event.target == icons[i]) {
+                    reduceIcon(0);
+                    zoomIcon(i);
+                }
+            }
+        }); */
 
 });

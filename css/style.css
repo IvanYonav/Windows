@@ -617,7 +617,7 @@ textarea:focus {
   margin-bottom: 3rem;
 }
 
-.works a[data-fancybox="gallery"] .lupa {
+.works img[data-fancybox="gallery"] .lupa {
   /* position: ; */
   top: 0;
   left: 0;
@@ -630,8 +630,8 @@ textarea:focus {
   transition: ease 0.2s;
 }
 
-.works a[data-fancybox="gallery"]:hover .lupa {
-  opacity: 1;
+.works a {
+  opacity: 0.7;
 }
 
 /*Guarantees*/
