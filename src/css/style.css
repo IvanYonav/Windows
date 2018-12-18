@@ -965,22 +965,29 @@ textarea:focus {
 }
 
 .popup_calc_content .balcon_icons {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .popup_calc_content .big_img img {
-  display: none;
   margin-bottom: 3rem;
   width: 30rem;
 }
+.popup_calc_content .balcon_icons img:hover {
+  border: 1px dotted #93C2EE;
+}
 
-.popup_calc_content #type1 {
+.calc_show {
   display: inline-block;
+
+}
+.calc_hide {
+  display: none;
 }
 
 .do_image_more {
   width: 110px;
   height: 70px;
+  border: 1px solid #93C2EE;
 }
 
 .popup_calc_close {
