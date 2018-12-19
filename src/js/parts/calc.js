@@ -157,8 +157,6 @@ function calc() {
     let form = document.querySelectorAll('form')[8],
         input = document.querySelectorAll('input');
 
-
-
     function clear() {
         for (let i = 0; i < input.length; i++) {
             input[i].value = '';
