@@ -127,7 +127,7 @@ textarea:focus {
 }
 
 .button:hover {
-  cursor: pointer;
+  filter: sepia(60%);
 }
 
 .section_header {
@@ -312,8 +312,9 @@ textarea:focus {
   text-decoration: none;
 }
 
-.phone_link a:hover {
-  color: #9a28d8;
+.feedback_block a:hover {
+  cursor: pointer;
+  color: #cccff7e8;
 }
 
 /*Main*/
@@ -395,6 +396,7 @@ textarea:focus {
 
 .glazing_block :hover {
   cursor: pointer;
+  background-color: #fff;
 }
 
 .glazing_cold {

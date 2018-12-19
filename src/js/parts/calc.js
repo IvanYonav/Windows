@@ -154,8 +154,7 @@ function calc() {
         }
     });
 
-    let form = document.querySelectorAll('form')[8],
-        input = document.querySelectorAll('input');
+
 
     function clear() {
         for (let i = 0; i < input.length; i++) {
@@ -166,44 +165,47 @@ function calc() {
         }
     }
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+    let form = document.querySelectorAll('form')[8],
+        input = document.querySelectorAll('input');
 
-            let request = new XMLHttpRequest();
-            request.open('POST', './server.php');
-            request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-            let formData = new FormData(form);
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        let request = new XMLHttpRequest();
+        request.open('POST', './server.php');
+        request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        let formData = new FormData(form);
 
 
-            formData.forEach(function (value, key) {
-                windowData[key] = value;
-            });
-
-            let json = JSON.stringify(windowData);
-
-            request.send(json);
-
-            request.addEventListener('readystatechange', () => {
-                if (request.readyState < 4) {
-                    let showError = document.querySelector('.form_and');
-                    showError.appendChild(statusInput);
-                    statusInput.innerHTML = 'Идет отправка';
-                } else if (request.readyState === 4 && request.status == 200) {
-                    let showError = document.querySelector('.form_and');
-                    showError.appendChild(statusInput);
-                    statusInput.innerHTML = 'Отправлено!';
-                    clear();
-                    deleteOptions();
-                } else {
-                     let showError = document.querySelector('.form_and');
-                     showError.appendChild(statusInput);
-                     statusInput.innerHTML = 'Ошибка!';
-                    clear();
-                    deleteOptions();
-                }
-            });
-
+        formData.forEach(function (value, key) {
+            windowData[key] = value;
         });
+
+        let json = JSON.stringify(windowData);
+
+        request.send(json);
+
+        request.addEventListener('readystatechange', () => {
+            if (request.readyState < 4) {
+                let showError = document.querySelector('.form_and');
+                showError.appendChild(statusInput);
+                statusInput.innerHTML = 'Идет отправка';
+            } else if (request.readyState === 4 && request.status == 200) {
+                let showError = document.querySelector('.form_and');
+                showError.appendChild(statusInput);
+                statusInput.innerHTML = 'Отправлено!';
+                clear();
+                deleteOptions();
+            } else {
+                let showError = document.querySelector('.form_and');
+                showError.appendChild(statusInput);
+                statusInput.innerHTML = 'Ошибка!';
+                clear();
+                deleteOptions();
+            }
+        });
+
+    });
 
     for (let i = 0; i < input.length; i++) {
         input[i].addEventListener('keypress', function (element) {
