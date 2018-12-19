@@ -5,8 +5,9 @@ function form() {
         faliure: 'Что-то пошло не так...'
     };
 
-    let contactForm = document.querySelectorAll('.form'),
+    let contactForm = document.querySelectorAll('.form-main'),
         statusMessage = document.createElement('div');
+    
     contactForm.forEach((item) => {
         item.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -70,5 +71,4 @@ function form() {
 
     let checkPhone = (text) => /^\d+$/.test(text);
 }
-
 export default form;

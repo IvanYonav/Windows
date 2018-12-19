@@ -946,7 +946,7 @@ textarea:focus {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 44rem;
-  padding: 1rem 0.5rem 4rem;
+  padding: 1rem 0.5rem 2rem;
   background-color: #ffffff;
 }
 
@@ -1020,6 +1020,7 @@ textarea:focus {
 
 .popup_calc_button {
   padding: 1rem 5rem;
+  margin-bottom: 5px;
 }
 
 .popup_calc_profile {
@@ -1040,8 +1041,9 @@ textarea:focus {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 40rem;
-  padding: 1rem 5rem 4rem;
+  padding: 1rem 5rem 2rem;
   background-color: #ffffff;
+
   /*	label {
 			margin-bottom: 1rem;
 			font-size: 1.5rem;
@@ -1140,6 +1142,7 @@ textarea:focus {
   transform: translateX(-50%);
   margin-top: 1rem;
   padding: 1rem 5rem;
+  margin-bottom: 10px;
 }
 
 /*Media*/

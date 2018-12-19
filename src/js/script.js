@@ -2,8 +2,9 @@
     import form from './parts/form.js';
     import modal from './parts/modal.js';
     import timer from './parts/timer.js';
-    import tabs from './parts/tabs.js';
+    import tabsGlazing from './parts/tabsGlazing.js';
     import openImg from './parts/openImg.js';
+    import tabsDecor from './parts/tabsDecor.js';
 
     window.addEventListener('DOMContentLoaded', () => {
         'use strict';
@@ -11,6 +12,7 @@
         form();
         modal();
         timer();
-        tabs();
+        tabsGlazing();
+        tabsDecor();
         openImg();
     });
