@@ -58,6 +58,7 @@ function calc() {
 
     function hideCalc(popupName) {
         popupName.style.display = 'none';
+        document.body.style.overflow = '';
     }
 
     popupCloseCalc.forEach(function (item) {
@@ -153,6 +154,11 @@ function calc() {
         }
     });
 
+    let form = document.querySelectorAll('form')[8],
+        input = document.querySelectorAll('input');
+
+
+
     function clear() {
         for (let i = 0; i < input.length; i++) {
             input[i].value = '';
@@ -161,11 +167,6 @@ function calc() {
             }, 3000);
         }
     }
-
-    let form = document.querySelectorAll('form')[8],
-        input = document.querySelectorAll('input');
-
-
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -207,14 +208,14 @@ function calc() {
         });
 
     for (let i = 0; i < input.length; i++) {
-        input[i].addEventListener('keypress', function (e) {
-            let key = e.keyCode;
+        input[i].addEventListener('keypress', function (element) {
+            let key = element.keyCode;
             let atributeName = input[i].getAttribute('name'),
                 inputId = input[i].id;
 
             if (atributeName == 'user_phone' || inputId == 'width' || inputId == 'height') {
                 if (key < 48 || key > 57) {
-                    e.preventDefault();
+                    element.preventDefault();
                 }
             }
         });
@@ -222,6 +223,5 @@ function calc() {
 
     checkBoxSelect();
 }
-
 
 export default calc;
